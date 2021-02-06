@@ -1,6 +1,6 @@
 <?php
 	require('config/config.php');
-	require('config/db.php');
+	include('config/db.php');
 
 	// Check For Submit
 	if(isset($_POST['submit'])){
@@ -55,4 +55,3 @@
   </form>
 </div>
 <?php include('inc/footer.php'); ?>
-
