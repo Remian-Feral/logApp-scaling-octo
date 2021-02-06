@@ -1,5 +1,11 @@
 <?php
-
+	require('config/config.php');
+	include_once('config/db.php');
+	
+	$Sql = "Select * From person;";
+	$result = mysqli_query($conn,$Sql);
+	$persons = mysqli_fetch_assoc($result);
+	//print_r($array);
 ?>
 
 <?php include('inc/header.php'); ?>
@@ -19,9 +25,9 @@
 		
 			<div class="well">
                 <tbody>
-                <?php foreach($persons as $person) : ?>
+                <?php foreach($persons as $person []) : ?>
                     <tr>
-                    <th scope="row"><?php echo $person['pid'];?></th>
+                    <td ><?php echo $person['pid'];?></td>
                     <td><?php echo $person['lastname'];?></td>
                     <td><?php echo $person['firstname'];?></td>
                     <td><?php echo $person['address'];?></td>
